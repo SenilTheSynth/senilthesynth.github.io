@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr" x-data :data-theme="$store.elva.theme">
+    <head>
+
+        <!-- charset / viewport -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- title / description -->
+        <title>Why I view cryptography and E2EE as critical infrastructure. • elva</title>
+		<meta name="description" content="A lengthy, cobbled together rant about controls systems, Matrix, and E2EE&#39;s relationship with critical infrastructure in my eyes.">
+
+        <!-- canonical / alternates -->
+        <link rel="canonical" href="http://localhost:8080/en/writing/controls-systems-suck/">
+        <link rel="alternate" hreflang="en" href="http://localhost:8080/en/writing/controls-systems-suck/">
+
+        <!-- open graph -->
+        <meta property="og:site_name" content="elva">
+        <meta property="og:title" content="Why I view cryptography and E2EE as critical infrastructure. • elva">
+        <meta property="og:description" content="A lengthy, cobbled together rant about controls systems, Matrix, and E2EE&#39;s relationship with critical infrastructure in my eyes.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://localhost:8080/en/writing/controls-systems-suck/">
+        <meta property="og:image" content="http://localhost:8080/assets/img/opengraph-default.png">
+        <meta property="og:image:alt" content="An English description of the default opengraph image">
+
+        <!-- icons -->
+        <link rel="icon" href="http://localhost:8080/favicon.ico" sizes="any">
+        <link rel="icon" href="http://localhost:8080/assets/img/icon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="http://localhost:8080/assets/img/icon-180.png">
+
+        <!-- styles -->
+        <link rel="stylesheet" href="/assets/css/bundle.css?v=1729500396232">
+
+        <!-- feeds -->
+        <link rel="alternate" href="http://localhost:8080/en/feed/feed.xml" type="application/atom+xml" title="RSS Feed • elva">
+		<link rel="alternate" href="http://localhost:8080/en/feed/feed.json" type="application/json" title="JSON Feed • elva">
+
+        <!-- preload / prefetch -->
+        
+
+        <!-- everything else -->
+        <link rel="manifest" href="http://localhost:8080/en/site.webmanifest">
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eceff4">
+        <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#2e3440">
+        
+        <link href="https://furry.engineer/@senil888" rel="me">
+        <meta name="fediverse:creator" content="@senil888@furry.engineer">
+
+        <!-- set theme before page renders to stop fouc -->
+        <script>document.documentElement.dataset.theme = localStorage.getItem('theme') === null ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : localStorage.getItem('theme')</script>
+    </head>
+    <body class="posts">
+        <!-- header -->
+        <header id="header" role="banner" class="header">
+
+    <a href="#content" class="skip-link screen-reader-text">Skip to content</a>
+
+    <nav class="navigation">
+    <a class="site-logo" href="/"  aria-label="Home">
+        <svg fill="none" height="242" viewBox="0 0 541 242" width="541" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-labelledby="logo-title" role="img">
+            <title id="logo-title">elva</title>
+            <clipPath id="a"><path d="m0 0h541v242h-541z"/></clipPath>
+            <clipPath id="b"><path d="m0 0h541v242h-541z"/></clipPath>
+            <g clip-path="url(#a)">
+                <g clip-path="url(#b)" fill="currentColor">
+                    <path d="m157.943 101.588c.969-2.2645 2.584-3.2351 4.522-3.2351 5.814 0 14.212 8.0881 14.212 15.5291 0 41.736-34.237 128.118-107.8795 128.118-50.7099 0-68.7975-34.618-68.7975-75.706 0-52.412 31.3303-92.5294 72.3504-92.5294 29.3926 0 47.8026 17.1471 47.8026 43.3534 0 26.205-23.5782 56.941-71.3811 57.588 4.8449 16.176 15.8267 23.617 28.7464 23.617 41.9887 0 63.6297-52.735 80.4247-96.735zm-111.755 51.118c27.4544-11.324 35.5292-23.618 35.5292-33.324 0-6.47-2.907-10.029-9.0438-10.029-14.2117 0-26.4854 19.412-26.4854 43.353z"/>
+                    <path d="m265.817 101.588c2.584-9.0586 18.733 2.265 18.733 12.294 0 41.736-31.33 128.118-85.27 128.118-46.511 0-63.307-35.912-62.338-125.206 0-70.2058 23.579-116.794 66.86-116.794 27.131 0 38.436 19.4118 38.436 54.6765 0 37.2059-20.348 73.1175-59.108 102.2355.646 28.47 11.305 41.412 24.871 41.412 26.162 0 44.896-53.383 57.816-96.736zm-82.364 17.147c13.566-25.235 21.964-47.8821 21.964-65.0291 0-14.5588-2.907-18.1177-7.106-18.1177-8.075 0-13.566 11.9706-14.858 83.1468z"/>
+                    <path d="m243.853 110.324c0-18.1181 17.442-32.3534 31.007-32.3534 15.181 0 15.181 5.8236 23.256 76.3534 3.23 29.441 6.137 44 15.504 44 6.459 0 12.273-11 15.503-24.265-12.919-9.706-17.441-27.5-17.441-50.794 0-30.7355 10.335-48.5296 26.485-48.5296 21.641 0 30.038 28.1466 30.038 50.7936 0 7.765-.323 15.53-1.292 22.971 13.889-2.912 23.902-16.176 35.853-46.912.969-2.2644 2.584-3.235 4.521-3.235 5.491 0 14.212 8.088 14.212 15.529 0 39.471-21.64 67.618-61.045 68.912-10.336 35.265-30.362 58.883-54.909 58.883-41.666 0-61.692-86.383-61.692-131.353z"/>
+                    <path d="m466.712 209c-9.367 18.441-22.287 32.353-38.436 32.353-24.548 0-49.418-25.235-49.418-63.412 0-60.176 30.361-104.1764 68.797-104.1764 15.181 0 22.933 9.0589 27.455 20.7059 2.583-11.9706 5.49-16.5 12.273-16.5 13.243 0 23.902 8.0883 23.902 18.1177 0 12.9408-6.137 71.1768-6.137 83.7938 0 7.765 3.23 10.03 8.398 10.03 4.522 0 8.72-3.559 11.95-8.412 1.938-3.235 3.876-5.5 7.106-5.5 4.845 0 8.398 4.529 8.398 12.294 0 26.853-12.274 53.706-31.33 53.706-16.796 0-35.529-14.235-42.958-33zm-45.865-34.941c0 8.412 2.261 14.882 7.752 14.882 16.149 0 31.653-44.323 31.653-63.412 0-6.47-2.261-9.382-6.137-9.382-13.243 0-33.268 31.059-33.268 57.912z"/>
+                </g>
+            </g>
+        </svg>
+    </a>
+    <ul class="navigation-menu">
+        
+        <li>
+            <a 
+                href="/en/about/"
+                
+            >
+                About
+            </a>
+        </li>
+        <li>
+            <a 
+                href="/en/"
+                
+            >
+                Blog
+            </a>
+        </li>
+    </ul>
+
+    <div class="switch-language">
+	
+		
+			<a href="/en/writing/controls-systems-suck/" lang="en" hreflang="en"  aria-label="EN: English" aria-current="page" class="current">
+				EN
+			</a>
+		
+	
+</div>
+</nav>
+
+</header>
+
+        <!-- content -->
+        <main id="content"><article class="hentry">
+    <header class="entry-header">
+        <h1 class="entry-title">Why I view cryptography and E2EE as critical infrastructure.</h1>
+        <ul class="meta">
+            <li class="meta-date">
+                <time class="entry-date published" datatime="2024-10-21T00:00:00Z">Sunday 20 October 2024</time>
+            </li>
+            <li class="meta-reading-time">10 minutes to read</li>
+        </ul>
+    </header>
+    <div class="entry-content">
+        <p>This is just a compilation of a very long thread I made on Mastodon so I can share this better. For more context, this is all in reference to my replies to Soatok’s ongoing responses to the Matrix dev team re: Soatok’s responsible disclosure of security flaws. The TL;DR is Matrix was using an educational implementation of a thing, that explicitly said to not use it in production, and didn’t do anything about that for seven years until Soatok found it.</p>
+<p>Here’s a link to my first of the reply chain directly talking about that here: <a href="https://furry.engineer/@senil888/112964632462775370">https://furry.engineer/@senil888/112964632462775370</a></p>
+<h2>This is why I think the way I do, and why I ultimately distrust the Matrix team and will distrust anyone - indivudal, organization, corporation, or government - who behaves similarly.</h2>
+<p>so. The main project I had with my (now former) company in my short time there was for a hydro dam up in the Idaho panhandle. Literally in “Boundary County” lol. That’s not important though.</p>
+<p>What is important is that this hydro dam - a small one, outputs about 4 megawatts during peak spring runoff - helps power the nearby towns via the city-run utility. While it’s not the end of the world for the dam to be offline, them being offline means the utility has to buy even more power than if it was running. Which costs the city a fair bit more money than running the dam themselves, because you have the power generation places that need their money to run their facilities, the transmission companies that need to fund their projects…</p>
+<p>So, it’s pretty important to help them get back on their feet. And we had a big task - we were to replace their old Allen-Bradley PLCs with our own, and toss in a SCADA system too.</p>
+<p>The SCADA system is fairly straightforward when it comes to data inputs - I could just take the data, label it, maybe do some conversions as-needed, and toss it up the chain. For this system, it went from generator-connected programmable logic controller (PLC) to a beefier controller running more sophisticated software, as well as a basic HMI, up to a control house computer that ran a COPA-DATA Zenon HMI that we also designed and developed. <strong>We were responsible for a lot of stuff.</strong></p>
+<p><picture><source type="image/avif" srcset="/assets/img/JD7IaVSVyA-300.avif 300w, /assets/img/JD7IaVSVyA-512.avif 512w" sizes="100vw"><source type="image/webp" srcset="/assets/img/JD7IaVSVyA-300.webp 300w, /assets/img/JD7IaVSVyA-512.webp 512w" sizes="100vw"><img class="" alt="A scared looking Senil, hands on his head, mouth open in shock." loading="lazy" fetch="auto" decoding="async" src="/assets/img/JD7IaVSVyA-300.png" width="512" height="512" srcset="/assets/img/JD7IaVSVyA-300.png 300w, /assets/img/JD7IaVSVyA-512.png 512w" sizes="100vw"></picture></p>
+<h1>The Controls</h1>
+<p>The hard part comes in when we actually add in the controls. Which is, y’know, important since we’re replacing everything their old PLCs did with our own system and solution. Which meant we needed reference code, since the customer knows their system the best (mostly, we talked with the operators who knew how to run the thing, but didn’t 100% know the backbones). What we got? Was in ladder logic. Which looks very different to structured text, aka what you think of when I say “what does a programming language look like typed out?” So… not only did we need to re-create that, we had to “translate” it into ST as well. Fun!</p>
+<p>This is where the controls joy comes in. Each PLC acts mostly the same when it comes to general operations. These outputs are for lights, this output needs to do this thing and get this signal for some time back before another thing can even think about asserting, etc.</p>
+<p>Spinning up a hydro generator takes a decent bit of time. Not forever mind you, but there’s a lot of steps involved. First you need to get water to, well, the generator’s turbine inlet. But you can’t just send water straight from the turbine inlet valve (TIV) to the turbines. You need to balance the water pressures between everything because if you don’t? Congratulations, you just broke the turbine and this generator has to be rebuilt.</p>
+<p>Once the TIV bypass does its thing for a while, we can actually open the TIV and start to send water to the turbine. Once water is getting to the turbine, we open up the wicket gates - which actually finally let water to the turbines. They’re controllable, so we can define exactly how much water gets to flow, and thus how much power a generator actually outputs.</p>
+<p>Then it’s the usual generator stuff. Get the thing up to speed and, once it’s up to speed and stays there for a little while, ya gotta sync the generator phases and frequency to the grid phases and frequency. If the phase angles are off too much, you end up kicking the generator forwards or backwards when the breaker closes to the grid. That can be violent, and harm the generator over time - or outright break it if the phase angle is off by too much. So we need that to be as precise as possible, and to close as soon as we’re confident it’ll safely kick in without breaking anything. So that’s the gist of the start-up sequence at the dam. All is well and good there.</p>
+<h1>“Edge cases cannot exist.”</h1>
+<p>However. There’s a fail over system with the Zenon HMI. See, the two powerhouse controllers gather all available data in this system as a form of redundancy - not via the physical network, but via the hardware. This is fine when it comes to inputs, since that version of Zenon can only listen to one controller at a time, but we run into problems with outputs. The “Zenon only talks to one controller at a time” becomes the enemy, in a way.</p>
+<p>While realistically rare, or outright “would never happen”, it is still technically possible for an operator to send a binary output command or update an analog setting <em>while Zenon changes which controller it listens to</em>. This can be for a variety of reasons - the operator told the controllers to switch over, Zenon lost access to one controller so it’s starting to talk to the other (a process that takes a bit of time), etc. <strong>The absolute last thing we need is for a command to be sent twice during this switchover,</strong> because output data cannot be shared between the two because of the whole “Zenon can only talke to one controller at a time.”</p>
+<p>Our first main problem was fixing this control switchover problem, brought upon the very nature of our design scheme and how Zenon works (which I think they’ve fixed since that version, but I never worked on Zenon myself). Again, we have to account for every possible problem which means figuring out how to make sure a command sent from Zenon “syncs” between devices. The solution I came up with was pretty clunky, to be frank, but it worked - I literally just told the controller that knew it was talking to Zenon to periodically pulse the analog setpoint to the other controller, so it at least knew what was going on and could report back to Zenon appropriately.</p>
+<p>What ended up happening was one generator - which was being rebuilt - wouldn’t report how far the wicket gates were open. I shouldn’t need to say that “this is bad” because if we can’t tell how far the wickets are open, <strong>we have no idea how much water, if any, is getting to the turbine proper.</strong></p>
+<p><picture><source type="image/avif" srcset="/assets/img/7WjNvFINLW-300.avif 300w, /assets/img/7WjNvFINLW-512.avif 512w" sizes="100vw"><source type="image/webp" srcset="/assets/img/7WjNvFINLW-300.webp 300w, /assets/img/7WjNvFINLW-512.webp 512w" sizes="100vw"><img class="" alt="An confused looking Senil, drooling with his mouth wide open, dazed look in his eyes. A loading icon floats above him." loading="lazy" fetch="auto" decoding="async" src="/assets/img/7WjNvFINLW-300.png" width="512" height="512" srcset="/assets/img/7WjNvFINLW-300.png 300w, /assets/img/7WjNvFINLW-512.png 512w" sizes="100vw"></picture></p>
+<p>The sensor was a hall effect one, made of steel. There is a window above it. This is a dam, close to the river and a waterfall. I hope you can guess what the problem is. Hint, it involves steel not liking moisture. We cleaned out a COPIOUS amount of rust, and hey look the sensor was finally working again, we got wicket gate data. So we could finally spin up this generator. Which we were able to do…</p>
+<p>Except, y’know. Problem time. The generator was vibrating, and vibrating a LOT. Consistently. Every time it started up, some code I adapted from the original ladder logic would run and trigger an emergency stop. The code runs on the controller directly talking to the generator, quietly monitoring vibration data. If ANY of the four input sensors report values over some threshold for more than a few seconds? Emergency stop time.</p>
+<p>So something is still wrong with this generator. We trust the sensors since we’re getting good data as the generator spins up, it just… shakes too much. We actually temporarily disabled the logic that trips the generator to monitor its behavior if it didn’t e-stop in time. It kept vibrating, more and more. It would probably shake itself apart if you let it keep going. It also did it consistently, and it was one bearing’s sensor that was consistently tripping. <em>(aside: that bearing had also seized up TWICE during prior trips to commission this generator. It also did it again after we left the site. That bearing did not like existing, apparently.)</em></p>
+<p>The only reason we were able to check this case is because what I had written worked and we knew it worked. In part because that same logic was on three other generators, but we were able to accidentally prove that hey, if this happens, it’ll trigger an emergency stop no problem. It turned out the people rebuilding the generator didn’t balance the flywheel when they fixed the bearing before, so oops! You can’t spin that thing up just yet.</p>
+<h1>Remember: Lives are at stake.</h1>
+<p>Imagine how bad this whole thing could’ve been if we weren’t as rigorous as we were. Generators could’ve broken apart. People could’ve been hurt. Expensive equipment could’ve gotten seriously damaged. Hell, it might not even have started up because of how much other equipment we had to interface with that we couldn’t investigate ourselves. That client trusted us to get their dam up and running with new hardware that would treat them well for many years to come, and to build a partnership with a firm they could trust. In the end, we delivered and they’re supposedly working on more (smaller) projects with them.</p>
+<p>I don’t know the specifics, but BECAUSE we were persistent in making sure every edge case we could think of was resolved, and fixing everything in real-time as problems came up (and making sure our fixes wouldn’t introduce NEW problems) we were able to tell them “you can trust us.” Because ultimately, <strong>“no one is obligated to buy from you. You can go out of business tomorrow if everyone decides to never work with you.”</strong></p>
+<p><em>(aside again: this is something I try to tell anyone who is running any kind of small business. Nobody is obliged to commission you, to hire you, to whatever. It’s on you to stay on top of things and make people want to work with you, and keep working with you.)</em></p>
+<h1>This is still about Matrix, trust me.</h1>
+<p>It’s largely because of my experience with the hydro project that I just can’t trust companies, projects, and teams that hide vulnerabilities and failure points and hope nobody finds them. It makes me question how many they actually have hidden when someone does find one. How many defects does their thing have, if some of the most obvious ones are let through? If this obvious error got through their QA checks, what else is lying under the hood that we don’t know about yet?</p>
+<p><strong>Can I trust this system to be robust enough in the event of a catastrophic failure?</strong></p>
+<p><picture><source type="image/avif" srcset="/assets/img/koRSg3gxNQ-300.avif 300w, /assets/img/koRSg3gxNQ-512.avif 512w" sizes="100vw"><source type="image/webp" srcset="/assets/img/koRSg3gxNQ-300.webp 300w, /assets/img/koRSg3gxNQ-512.webp 512w" sizes="100vw"><img class="" alt="An angry looking Senil cracking his knuckles together, with flames behind him." loading="lazy" fetch="auto" decoding="async" src="/assets/img/koRSg3gxNQ-300.png" width="512" height="512" srcset="/assets/img/koRSg3gxNQ-300.png 300w, /assets/img/koRSg3gxNQ-512.png 512w" sizes="100vw"></picture></p>
+<p>I know cryptography - E2EE in particular - isn’t remotely comparable to what I’ve worked on, but what I’ve worked on is super important. Lives are at stake with these projects. I need to be confident that what I do isn’t going to hurt people. That it isn’t going to break equipment. That it isn’t going to fail in two years because of an oversight, <em>or something we knew about and ignored because it’s “technically impossible”.</em></p>
+<p>I need projects in critical fields that take themselves seriously to ACT like lives are at stake, because maybe some are.</p>
+<p>But if you’re taking yourself seriously, in something as important as cryptography, something that is increasingly important every single day in every field - critical infrastructure included - you need to act like lives are at stake if you fuck up.</p>
+<p>I know some of this shit is just a chat protocol, “why are you so pressed” blah blah blah. A lot of people herald E2EE services as a secure way to also talk about protests and labor organization without significant risk of getting caught. Of course, if you don’t regularly use E2EE normally the fact you use it might implicate you. When it comes to organizing? If a court requests data from some service, as little data as possible should be sent out. Because people get jailed or imprisoned for organizing. Those lives are on the line if your system isn’t up to snuff.</p>
+<p>This isn’t to say “just pick any E2EE service, it’s fine” because it’s not fine to do that. People need a service they can trust, that’s reliable, that takes security seriously and does everything in their power to make sure what they do is as secure as possible. From what they know is a fail point, and what they later find out is a new possible fail point. People need services they can trust that has their best interests in mind. Clients need businesses they can trust that can hold up their end of the contract and deliver a quality solution that fits their client’s needs.</p>
+<p><strong>Why should anything like this be any different?</strong></p>
+<p>People die when we fuck up in the power industry. We can’t allow that to happen, ever. Our trust is built upon proving a track record of quality work that is done timely. Work that stands the test of time as systems operate. I know a lot of shit is nothing compared to critical infrastructure, but I wish more folks took it remotely as seriously as people in my industry have to. Because if we fuck up, people get hurt. People lose power. Facilities get damaged. Industry stops. And, ultimately…</p>
+<p><em><strong>If the power goes out… so does everything else.</strong></em></p>
+
+    </div>
+</article></main>
+
+        <!-- footer -->
+        <footer id="footer" class="footer">
+
+    <div class="switch-wrapper" x-data x-cloak>
+	<input class="switch" id="darkmode" type="checkbox" value="dark" :checked="$store.elva.theme === 'dark'" />
+	<label class="switch-btn" for="darkmode" tabindex="0" aria-label="Toggle dark/light theme" @keydown.prevent.space @click="$store.elva.themeToggle()" @keyup.prevent.space="$store.elva.themeToggle()" :class="$store.elva.theme === 'dark' ? 'switch-button-on' : 'switch-button-off'">
+        <svg class="icon icon-sun" width="1em" height="1em" viewBox="0 0 24 24" fill="none" aria-labelledby="icon-sun" xmlns="http://www.w3.org/2000/svg">
+            <title id="icon-sun">Light</title>
+            <circle cx="11.9998" cy="11.9998" r="5.75375" fill="currentColor" />
+            <g>
+                <circle cx="3.08982" cy="6.85502" r="1.71143" transform="rotate(-60 3.08982 6.85502)" fill="currentColor" />
+                <circle cx="3.0903" cy="17.1436" r="1.71143" transform="rotate(-120 3.0903 17.1436)" fill="currentColor" />
+                <circle cx="12" cy="22.2881" r="1.71143" fill="currentColor" />
+                <circle cx="20.9101" cy="17.1436" r="1.71143" transform="rotate(-60 20.9101 17.1436)" fill="currentColor" />
+                <circle cx="20.9101" cy="6.8555" r="1.71143" transform="rotate(-120 20.9101 6.8555)" fill="currentColor" />
+                <circle cx="12" cy="1.71143" r="1.71143" fill="currentColor" />
+            </g>
+            </circle>
+        </svg>
+        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 50 50" aria-labelledby="icon-moon">
+            <title id="icon-moon">Dark</title>
+            <path d="M 43.81 29.354 C 43.688 28.958 43.413 28.626 43.046 28.432 C 42.679 28.238 42.251 28.198 41.854 28.321 C 36.161 29.886 30.067 28.272 25.894 24.096 C 21.722 19.92 20.113 13.824 21.683 8.133 C 21.848 7.582 21.697 6.985 21.29 6.578 C 20.884 6.172 20.287 6.022 19.736 6.187 C 10.659 8.728 4.691 17.389 5.55 26.776 C 6.408 36.163 13.847 43.598 23.235 44.451 C 32.622 45.304 41.28 39.332 43.816 30.253 C 43.902 29.96 43.9 29.647 43.81 29.354 Z" fill="currentColor" />
+        </svg>
+	</label>
+</div>
+
+
+    <p class="subtle">The year is 2024</p>
+
+    <a href="/en/feed/feed.xml" class="rss-icon" aria-label="RSS Feed" >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-labelledby="icon-rss" role="img" width="24" height="24">
+            <title id="icon-rss">RSS Feed</title>
+            <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" fill="currentColor" />
+        </svg>
+    </a>
+
+</footer>
+
+        <!-- scripts -->
+        <script src="/assets/js/bundle.js?v=1729500396234" defer></script>
+    </body>
+</html>

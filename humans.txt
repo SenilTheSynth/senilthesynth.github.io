@@ -1,0 +1,12 @@
+/* TEAM */
+Designer / Developer: Senil
+Contact: hello@senil.me
+Site: https://senil.me
+From: Your Computer
+Fediverse: https://furry.engineer/@senil888
+
+/* SITE */
+Last update: 2024-10-21
+Standards: HTML5, CSS3
+Components: elva, Alpine.js
+Software: 11ty
