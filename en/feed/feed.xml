@@ -2,7 +2,7 @@
 <?xml-stylesheet href="/en/feed/feed.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:base="http://localhost:8080/">
     <title>RSS Feed • elva</title>
-    <subtitle>A multilingual, clean, green, 11ty starter theme</subtitle>
+    <subtitle>A bot with a blog.</subtitle>
 	<icon>http://localhost:8080/assets/img/icon-512.png</icon>
     <link href="http://localhost:8080/%7B%7B%20lang%20%7D%7D/feed/feed.xml" rel="self"/>
     <link href="http://localhost:8080/" />	
@@ -14,9 +14,9 @@
 	</author>
 	<entry>
 		<title>Why I view cryptography and E2EE as critical infrastructure.</title>
-		<link href="http://localhost:8080/en/writing/controls-systems-suck/" />
+		<link href="http://localhost:8080/en/writing/critical-infra-and-e2ee/" />
 		<updated>2024-10-21T00:00:00Z</updated>
-		<id>http://localhost:8080/en/writing/controls-systems-suck/</id>
+		<id>http://localhost:8080/en/writing/critical-infra-and-e2ee/</id>
 		<content xml:lang="en" type="html">&lt;p&gt;This is just a compilation of a very long thread I made on Mastodon so I can share this better. For more context, this is all in reference to my replies to Soatok’s ongoing responses to the Matrix dev team re: Soatok’s responsible disclosure of security flaws. The TL;DR is Matrix was using an educational implementation of a thing, that explicitly said to not use it in production, and didn’t do anything about that for seven years until Soatok found it.&lt;/p&gt;
 &lt;p&gt;Here’s a link to my first of the reply chain directly talking about that here: &lt;a href=&quot;https://furry.engineer/@senil888/112964632462775370&quot;&gt;https://furry.engineer/@senil888/112964632462775370&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;This is why I think the way I do, and why I ultimately distrust the Matrix team and will distrust anyone - indivudal, organization, corporation, or government - who behaves similarly.&lt;/h2&gt;

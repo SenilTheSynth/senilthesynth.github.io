@@ -330,7 +330,7 @@ h6,
 p,
 li,
 blockquote:not([class]) {
-  max-width: 65ch;
+  max-width: 100ch;
 }
 
 p:has(> picture) {
@@ -341,7 +341,7 @@ p:has(> picture) {
 h1,
 h2,
 h3 {
-  max-width: 20ch;
+  max-width: 60ch;
 }
 
 mark {
