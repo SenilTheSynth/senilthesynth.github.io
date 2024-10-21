@@ -8,25 +8,25 @@
 	</url>
 	<url>
 		<loc>http://localhost:8080/en/</loc>
-		<lastmod>2024-10-21T07:07:56Z</lastmod>
+		<lastmod>2024-10-21T09:20:10Z</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.7</priority>
 	</url>
 	<url>
 		<loc>http://localhost:8080/en/about/</loc>
-		<lastmod>2024-10-21T07:07:56Z</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>http://localhost:8080/</loc>
-		<lastmod>2024-10-21T07:25:49Z</lastmod>
+		<lastmod>2024-10-21T09:20:10Z</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.7</priority>
 	</url>
 	<url>
 		<loc>http://localhost:8080/en/streams/</loc>
-		<lastmod>2024-10-21T07:25:49Z</lastmod>
+		<lastmod>2024-10-21T09:20:10Z</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>http://localhost:8080/</loc>
+		<lastmod>2024-10-21T09:20:10Z</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.7</priority>
 	</url>
