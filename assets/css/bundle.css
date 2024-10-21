@@ -98,7 +98,7 @@ select {
     --foreground: var(--senilgray);
     --foreground-soft: color-mix(in srgb, var(--nord6) 30%, var(--senilgray));
     --link: color-mix(in srgb, var(--nord10) 70%, var(--senilgray));
-    --link-hover: var(--00ffac);
+    --link-hover: var(--senilaccent);
     --divider: color-mix(in srgb, var(--nord6) 80%, var(--senilgray));
 
     /* syntax highlighting */
@@ -330,12 +330,12 @@ h6,
 p,
 li,
 blockquote:not([class]) {
-  max-width: 100ch;
+  max-width: 70ch;
 }
 
 p:has(> picture) {
-    max-width: initial;
-    width: 100%;
+    max-width: 50%;
+    width: 50%;
 }
 
 h1,
@@ -614,7 +614,7 @@ a[aria-current="page"] {
     padding: 0;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 300px) {
     .posts .meta {
         display: flex;
         gap: var(--space-3xs);
