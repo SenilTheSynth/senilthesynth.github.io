@@ -18,7 +18,19 @@ figure,
 blockquote,
 dl,
 dd {
-	margin: 0;
+	margin-top: 0;
+	margin-left: 6vw;
+	margin-right: 4vw;
+	margin-bottom: 0;
+}
+
+li,
+ul,
+ol {
+	margin-top: 10px;
+	margin-left: 3vw;
+	margin-right: 4vw;
+	margin-bottom: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -90,14 +102,15 @@ select {
     --senilaccent: #00ffac;
     --senilgreen: #006a47;
     --senilblue: #00488c;
-    --senilgray: #222222;
+    --senilgray: #181818;
+    --senilwhite: #eeeeee;
 
     /* colours */
-    --background: var(--nord6);
-    --background-soft: var(--nord4);
+    --background: var(--senilwhite);
+    --background-soft: color-mix(in srgb, var(--senilwhite) 70%, var(--senilgray));
     --foreground: var(--senilgray);
-    --foreground-soft: color-mix(in srgb, var(--nord6) 30%, var(--senilgray));
-    --link: color-mix(in srgb, var(--nord10) 70%, var(--senilgray));
+    --foreground-soft: color-mix(in srgb, var(--senilwhite) 30%, var(--senilgray));
+    --link: var(--senilgreen);
     --link-hover: var(--senilaccent);
     --divider: color-mix(in srgb, var(--nord6) 80%, var(--senilgray));
 
@@ -171,12 +184,12 @@ select {
 
     /* colours */
     --background: var(--senilgray);
-    --background-soft: var(--nord2);
-    --foreground: var(--nord6);
-    --foreground-soft: color-mix(in srgb, var(--nord6) 70%, var(--senilgray));
-    --link: var(--nord8);
-    --link-hover: var(--nord6);
-    --divider: var(--nord3);
+    --background-soft: color-mix(in srgb, var(--senilgray) 70%, var(--senilwhite));
+    --foreground: var(--senilwhite);
+    --foreground-soft: color-mix(in srgb, var(--senilwhite) 70%, var(--senilgray));
+    --link: var(--senilaccent);
+    --link-hover: var(--senilgreen);
+    --divider: color-mix(in srgb, var(--senilgray) 50%, var(--senilwhite));
 
     /* syntax highlighting */
     --code-background: var(--nord1);
@@ -341,7 +354,7 @@ p:has(> picture) {
 h1,
 h2,
 h3 {
-  max-width: 60ch;
+  max-width: 50ch;
 }
 
 mark {
@@ -455,7 +468,7 @@ body {
 }
 
 #content {
-    padding: var(--space-m-3xl);
+    padding: var(--space-m);
     flex-grow: 1;
 }
 
@@ -500,7 +513,7 @@ body {
     font-weight: 500;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 200px) {
     .navigation {
         flex-direction: row;
     }
@@ -511,7 +524,7 @@ body {
     height: auto;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 200px) {
     .site-logo {
         max-width: 100px;
         width: 33%;
@@ -538,7 +551,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: var(--space-s-m);
+    gap: var(--space-xs);
     flex-grow: 1;
 }
 
