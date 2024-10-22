@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="/en/feed/feed.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:base="http://localhost:8080/">
-    <title>RSS Feed - elva</title>
+    <title>RSS Feed - Senil</title>
     <subtitle>A bot with a blog.</subtitle>
 	<icon>http://localhost:8080/assets/img/icon-512.png</icon>
     <link href="http://localhost:8080/%7B%7B%20lang%20%7D%7D/feed/feed.xml" rel="self"/>
