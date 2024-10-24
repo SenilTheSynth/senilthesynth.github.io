@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>http://localhost:8080/en/writing/critical-infra-and-e2ee/</loc>
-		<lastmod>2024-10-21T00:00:00Z</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>http://localhost:8080/en/</loc>
-		<lastmod>2024-10-21T09:20:10Z</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>http://localhost:8080/en/about/</loc>
-		<lastmod>2024-10-21T09:20:10Z</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>http://localhost:8080/en/streams/</loc>
-		<lastmod>2024-10-21T09:20:10Z</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<url>
-		<loc>http://localhost:8080/</loc>
-		<lastmod>2024-10-21T09:20:10Z</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
+  
+  <url>
+    <loc>https://blog.senil.me/critical-infra-and-e2ee/</loc>
+    <lastmod>2024-10-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/</loc>
+    <lastmod>2024-10-24</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/page-list/</loc>
+    <lastmod>2024-10-24</lastmod>
+  </url>
 </urlset>
