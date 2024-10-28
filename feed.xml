@@ -5,12 +5,34 @@
 	
 	<link href="https://blog.senil.me/feed.xml" rel="self"/>
 	<link href="https://blog.senil.me/"/>
-	<updated>2024-10-26T00:00:00Z</updated>
+	<updated>2024-10-27T00:00:00Z</updated>
 	<id>https://blog.senil.me/</id>
 	<author>
 		<name>Senil</name>
 		<email></email>
 	</author>
+	
+	<entry>
+		<title>Splatlings - Initial design</title>
+		<link href="https://blog.senil.me/splatling-initial-prep/"/>
+		<updated>2024-10-27T00:00:00Z</updated>
+		<id>https://blog.senil.me/splatling-initial-prep/</id>
+		<content type="html">&lt;p&gt;Yep! I want to build the splatlings from Splatoon 3 - eventually I want to build the Hydra splatling, but I’ll be starting off with splatlings that focus more on developing specific techniques before moving onto the splatling that will ask the most of me. From learning how to make stuff look metallic, molding materials to form the “metal” canister, fire hydrant, and support bar… the Hydra will take a lot from me.&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;https://cdn.wikimg.net/en/splatoonwiki/images/d/d1/S3_Weapon_Main_Hydra_Splatling.png&quot;&gt;&lt;img src=&quot;https://cdn.wikimg.net/en/splatoonwiki/images/d/d1/S3_Weapon_Main_Hydra_Splatling.png&quot; alt=&quot;The Hydra splatling from Splatoon 3&quot; loading=&quot;lazy&quot; style=&quot;&quot; /&gt;&lt;/a&gt;&lt;figcaption&gt;The Hydra splatling from Splatoon 3&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;There are three splatlings I want to build, each of them focusing on different aspects.&lt;/p&gt;
+&lt;h2 id=&quot;the-ballpoint-splatling&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://blog.senil.me/splatling-initial-prep/#the-ballpoint-splatling&quot;&gt;The Ballpoint Splatling&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This splatling build will focus primarily on the building aspect. The main hurdle I anticipate is the clear plastic part that makes up like, half of the build. This is going to involve a &lt;em&gt;lot&lt;/em&gt; of plexi-molding, 3D printing, and a lot of attention to detail to make what I build look, like, well. A giant ballpoint pen - one of the ones with multiple ink barrels.&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;https://cdn.wikimg.net/en/splatoonwiki/images/f/f9/S3_Weapon_Main_Ballpoint_Splatling.png&quot;&gt;&lt;img src=&quot;https://cdn.wikimg.net/en/splatoonwiki/images/f/f9/S3_Weapon_Main_Ballpoint_Splatling.png&quot; alt=&quot;The Ballpoint splatling from Splatoon 3.&quot; loading=&quot;lazy&quot; style=&quot;&quot; /&gt;&lt;/a&gt;&lt;figcaption&gt;The Ballpoint splatling from Splatoon 3.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;At some point I want to add a motor, some lights, a speaker, and some other things to really sell that “this is pulled straight from the game” - however, that’s a “later me” problem. I &lt;em&gt;do&lt;/em&gt; plan on initially designing with that goal in mind.&lt;/p&gt;
+&lt;h2 id=&quot;the-heavy-splatling&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://blog.senil.me/splatling-initial-prep/#the-heavy-splatling&quot;&gt;The Heavy Splatling&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This one will focus on the electronic side of everything. Motors, sounds, lights, controls, etc. My biggest concern with the Heavy splatling will be the motor design. My sister’s wife suggested a weak DC motor, and I’ve contemplated setting it up to be belt driven since it &lt;em&gt;might&lt;/em&gt; enable me to use similar motor code to drive every other splatling I build.&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;https://cdn.wikimg.net/en/splatoonwiki/images/5/5e/S3_Weapon_Main_Heavy_Splatling.png&quot;&gt;&lt;img src=&quot;https://cdn.wikimg.net/en/splatoonwiki/images/5/5e/S3_Weapon_Main_Heavy_Splatling.png&quot; alt=&quot;The Heavy splatling from Splatoon 3.&quot; loading=&quot;lazy&quot; style=&quot;&quot; /&gt;&lt;/a&gt;&lt;figcaption&gt;The Heavy splatling from Splatoon 3.&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;The Heavy splatling is also going to be 90% about the code, and will be the starting point for the code design I want to achieve. My end goal is a relatively modular code setup that’s segmented in ways that should &lt;em&gt;hopefully&lt;/em&gt; minimize the re-writes necessary. Stuff like changing the how long it takes to hit the first and full charge, how long the it fires based on how long it’s charged, all sorts of stuff I want to make as re-usable as possible.&lt;/p&gt;
+&lt;p&gt;Both because it’ll make my life easier when it comes to future splatling builds, and also to (hopefully) make it easier for others who want to build a splatling themself.&lt;/p&gt;
+&lt;h2 id=&quot;the-hydra-splatling&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://blog.senil.me/splatling-initial-prep/#the-hydra-splatling&quot;&gt;The Hydra Splatling&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;This one will be the thing to merge everything together. Electronics, building, the works. The build will be the hard part, mostly because the Hydra is my main weapon in Splatoon and I want to put my all into it. Making stuff look like it’s actually metal, figuring out how to build a &lt;em&gt;cast iron fire hydrant&lt;/em&gt; without building it from cast iron, the Works. It’ll be a challenge, and definitely one I want to save for last.&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;https://blog.senil.me/assets/images/SenilHydra.png&quot;&gt;&lt;img src=&quot;https://blog.senil.me/assets/images/SenilHydra.png&quot; alt=&quot;Senil leaning on the Hydra splatling. Art by [Dragonjourney](https://x.com/Dragonjourney)&quot; loading=&quot;lazy&quot; style=&quot;&quot; /&gt;&lt;/a&gt;&lt;figcaption&gt;Senil leaning on the Hydra splatling. Art by &lt;a href=&quot;https://x.com/Dragonjourney&quot;&gt;Dragonjourney&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content>
+	</entry>
 	
 	<entry>
 		<title>Tablets are kind of shit right now.</title>
