@@ -17,3 +17,5 @@
 {% figure "/assets/images/stickers/AngrySenil.png", "Senil cracking his knuckles with flames behind him. Art by [Dragonjourney](https://x.com/Dragonjourney)" %}
 
 {% figure "/assets/images/stickers/DrainedSenil.png", "Senil lying face-down on the ground, with a low battery symbol above him. Art by [Dragonjourney](https://x.com/Dragonjourney)" %}
+
+{% figure "/assets/images/stickers/SadSenil.png", "Senil curled into a ball, crying. Art by [Dragonjourney](https://x.com/Dragonjourney)" %}
