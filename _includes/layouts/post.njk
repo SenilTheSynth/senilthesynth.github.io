@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+---
+<p><time datetime="{{ (last_modified_at or page.date) | htmlDateString }}">Posted {{ (last_modified_at or page.date) | readableDate }}</time></p>
+
+<article>
+{{ content | safe }}
+</article>
