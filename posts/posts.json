@@ -1,8 +1,0 @@
-{
-  "permalink": "/{{ page.fileSlug }}/index.html",
-  "tags": [
-    "posts"
-  ],
-  "includeJsonLD": true,
-  "layout": "layouts/post.njk"
-}
