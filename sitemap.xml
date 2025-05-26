@@ -7,16 +7,6 @@
   </url>
   
   <url>
-    <loc>https://blog.senil.me/</loc>
-    <lastmod>2024-10-24</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.senil.me/page-list/</loc>
-    <lastmod>2024-10-24</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.senil.me/rip-cohost/</loc>
     <lastmod>2024-10-25</lastmod>
   </url>
@@ -28,11 +18,6 @@
   
   <url>
     <loc>https://blog.senil.me/splatling-initial-prep/</loc>
-    <lastmod>2024-10-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.senil.me/assets/images/image-captions/</loc>
     <lastmod>2024-10-27</lastmod>
   </url>
   
@@ -64,5 +49,25 @@
   <url>
     <loc>https://blog.senil.me/happy-new-year-plans/</loc>
     <lastmod>2025-02-08</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/assets/images/image-captions/</loc>
+    <lastmod>2025-05-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/</loc>
+    <lastmod>2025-05-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/page-list/</loc>
+    <lastmod>2025-05-19</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/esphome-google-mini-initial-thoughts/</loc>
+    <lastmod>2025-05-25</lastmod>
   </url>
 </urlset>

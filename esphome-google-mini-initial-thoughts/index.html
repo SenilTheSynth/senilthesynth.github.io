@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Home Mini to ESPHome - Hardware Selection</title>
+
+  <style>
+    
+    /* lora-700 - latin */
+    @font-face {
+      font-family: 'Lora';
+      font-style: normal;
+      font-weight: 700;
+      src: local(''),
+          url('/assets/fonts/lora-v26-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('/assets/fonts/lora-v26-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+
+  
+
+  :root{--sans-font:-apple-system,BlinkMacSystemFont,"Avenir Next",Avenir,"Nimbus Sans L",Roboto,"Noto Sans","Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;--mono-font:Consolas,Menlo,Monaco,"Andale Mono","Ubuntu Mono",monospace;--bg:#fff;--accent-bg:#f5f7ff;--text:#212121;--text-light:#585858;--border:#d8dae1;--accent:#0d47a1;--code:#d81b60;--preformatted:#444;--marked:#ffdd33;--disabled:#efefef}@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#212121;--accent-bg:#2b2b2b;--text:#dcdcdc;--text-light:#ababab;--border:#666;--accent:#ffb300;--code:#f06292;--preformatted:#ccc;--disabled:#111}img,video{opacity:.8}}*,::after,::before{box-sizing:border-box}input,progress,select,textarea{appearance:none;-webkit-appearance:none;-moz-appearance:none}html{font-family:var(--sans-font);scroll-behavior:smooth}body{color:var(--text);background-color:var(--bg);font-size:1.15rem;line-height:1.5;display:grid;grid-template-columns:1fr min(45rem,90%) 1fr;margin:0}body>*{grid-column:2}body>header{background-color:var(--accent-bg);border-bottom:1px solid var(--border);text-align:center;padding:0 .5rem 2rem .5rem;grid-column:1/-1}body>header h1{max-width:1200px;margin:1rem auto}body>header p{max-width:40rem;margin:1rem auto}main{padding-top:1.5rem}body>footer{margin-top:4rem;padding:2rem 1rem 1.5rem 1rem;color:var(--text-light);font-size:.9rem;text-align:center;border-top:1px solid var(--border)}h1{font-size:3rem}h2{font-size:2.6rem;margin-top:3rem}h3{font-size:2rem;margin-top:3rem}h4{font-size:1.44rem}h5{font-size:1.15rem}h6{font-size:.96rem}h1,h2,h3,h4,h5,h6,p{overflow-wrap:break-word}h1,h2,h3{line-height:1.1}@media only screen and (max-width:720px){h1{font-size:2.5rem}h2{font-size:2.1rem}h3{font-size:1.75rem}h4{font-size:1.25rem}}a,a:visited{color:var(--accent)}a:hover{text-decoration:none}[role=button],button,input[type=button],input[type=reset],input[type=submit],label[type=button]{border:none;border-radius:5px;background-color:var(--accent);font-size:1rem;color:var(--bg);padding:.7rem .9rem;margin:.5rem 0}[role=button][aria-disabled=true],button[disabled],input[type=button][disabled],input[type=checkbox][disabled],input[type=radio][disabled],input[type=reset][disabled],input[type=submit][disabled],select[disabled]{opacity:.5;cursor:not-allowed}input:disabled,select:disabled,textarea:disabled{cursor:not-allowed;background-color:var(--disabled)}input[type=range]{padding:0}abbr{cursor:help}[role=button]:focus,[role=button]:not([aria-disabled=true]):hover,button:enabled:hover,button:focus,input[type=button]:enabled:hover,input[type=button]:focus,input[type=reset]:enabled:hover,input[type=reset]:focus,input[type=submit]:enabled:hover,input[type=submit]:focus,label[type=button]:focus,label[type=button]:hover{filter:brightness(1.4);cursor:pointer}header>nav{font-size:1rem;line-height:2;padding:1rem 0 0 0}header>nav ol,header>nav ul{align-content:space-around;align-items:center;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;list-style-type:none;margin:0;padding:0}header>nav ol li,header>nav ul li{display:inline-block}header>nav a,header>nav a:visited{margin:0 .5rem 1rem .5rem;border:1px solid var(--border);border-radius:5px;color:var(--text);display:inline-block;padding:.1rem 1rem;text-decoration:none}header>nav a:hover{filter:brightness(1.4);cursor:pointer}@media only screen and (max-width:720px){header>nav a{border:none;padding:0;text-decoration:underline;line-height:1}}aside,details,pre,progress{background-color:var(--accent-bg);border:1px solid var(--border);border-radius:5px;margin-bottom:1rem}aside{font-size:1rem;width:30%;padding:0 15px;margin-left:15px;float:right}@media only screen and (max-width:720px){aside{width:100%;float:none;margin-left:0}}article,fieldset{border:1px solid var(--border);padding:1rem;border-radius:5px;margin-bottom:1rem}article h2:first-child,section h2:first-child{margin-top:1rem}section{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 1rem;margin:3rem 0}section+section,section:first-child{border-top:0;padding-top:0}section:last-child{border-bottom:0;padding-bottom:0}details{padding:.7rem 1rem}summary{cursor:pointer;font-weight:700;padding:.7rem 1rem;margin:-.7rem -1rem;word-break:break-all}details[open] summary+*{margin-top:0}details[open] summary{margin-bottom:.5rem}details[open]>:last-child{margin-bottom:0}table{border-collapse:collapse;display:block;margin:1.5rem 0;overflow:auto;width:100%}td,th{border:1px solid var(--border);text-align:left;padding:.5rem}th{background-color:var(--accent-bg);font-weight:700}tr:nth-child(2n){background-color:var(--accent-bg)}table caption{font-weight:700;margin-bottom:.5rem}input,select,textarea{font-size:inherit;font-family:inherit;padding:.5rem;margin-bottom:.5rem;color:var(--text);background-color:var(--bg);border:1px solid var(--border);border-radius:5px;box-shadow:none;max-width:100%;display:inline-block}label{display:block}textarea:not([cols]){width:100%}select:not([multiple]){background-image:linear-gradient(45deg,transparent 49%,var(--text) 51%),linear-gradient(135deg,var(--text) 51%,transparent 49%);background-position:calc(100% - 15px),calc(100% - 10px);background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:25px}input[type=checkbox],input[type=radio]{vertical-align:middle;position:relative}input[type=radio]{border-radius:100%}input[type=checkbox]:checked,input[type=radio]:checked{background-color:var(--accent)}input[type=checkbox]:checked::after{content:" ";width:.18em;height:.32em;border-radius:0;position:absolute;top:.05em;left:.17em;background-color:transparent;border-right:solid var(--bg) .08em;border-bottom:solid var(--bg) .08em;font-size:1.8em;transform:rotate(45deg)}input[type=radio]:checked::after{content:" ";width:.25em;height:.25em;border-radius:100%;position:absolute;top:.125em;background-color:var(--bg);left:.125em;font-size:32px}@media only screen and (max-width:720px){input,select,textarea{width:100%}}input[type=checkbox],input[type=radio]{width:auto}input[type=color]{height:2.5rem;padding:.2rem}input[type=file]{border:0}hr{color:var(--border);border-top:1px;margin:1rem auto}mark{padding:2px 5px;border-radius:4px;background-color:var(--marked)}img,video{max-width:100%;height:auto;border-radius:5px}figure{margin:0;text-align:center}figcaption{font-size:.9rem;color:var(--text-light);margin-bottom:1rem}blockquote{margin:2rem 0 2rem 2rem;padding:.4rem .8rem;border-left:.35rem solid var(--accent);color:var(--text-light);font-style:italic}cite{font-size:.9rem;color:var(--text-light);font-style:normal}dl{display:grid;grid-template-columns:auto 1fr}dl dt{grid-column-start:1;color:var(--text-light)}dl dd{grid-column-start:2}code,kbd,pre,pre span,samp{font-family:var(--mono-font);color:var(--code)}kbd{color:var(--preformatted);border:1px solid var(--preformatted);border-bottom:3px solid var(--preformatted);border-radius:5px;padding:.1rem .4rem}pre{padding:1rem 1.4rem;max-width:100%;overflow:auto;color:var(--preformatted)}pre code{color:var(--preformatted);background:0 0;margin:0;padding:0}progress{width:100%}progress:indeterminate{background-color:var(--accent-bg)}progress::-webkit-progress-bar{border-radius:5px;background-color:var(--accent-bg)}progress::-webkit-progress-value{border-radius:5px;background-color:var(--accent)}progress::-moz-progress-bar{border-radius:5px;background-color:var(--accent);transition-property:width;transition-duration:.3s}progress:indeterminate::-moz-progress-bar{background-color:var(--accent-bg)}:root{--sans-font:Roboto,"Nimbus Sans L","Avenir Next",Avenir,"Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;--mono-font:"Ubuntu Mono",Consolas,Menlo,Monaco,"Andale Mono",monospace}@media (prefers-color-scheme:light){:root{--bg:#eeeeee;--accent-bg:#efefef;--accent:#006a47}}@media (prefers-color-scheme:dark){:root{--bg:#222222;--accent-bg:#1e1e1e;--accent:#00ffac}}body{grid-template-columns:1fr min(55rem,90%) 1fr;font-size:1.25rem;line-height:1.7;overflow-y:scroll}body>header{text-align:left;padding:0}body>header>a{max-width:1200px;margin:1rem auto;font-size:1.5rem;display:block;font-weight:700;color:var(--text)!important;font-family:Lora;padding-left:.5rem}a{text-decoration:none}blockquote{font-style:normal}h1{color:var(--accent)}h1,h2,h3,h4,h5,h6{font-family:Lora,serif;margin-bottom:.25em}a.header-anchor{color:unset}time{color:var(--text-light);font-size:1rem;padding-top:1.5rem;display:inline-block}footer{grid-column:1/-1;background-color:var(--accent-bg);padding-top:3rem;box-shadow:0 50vh 0 50vh var(--accent-bg)}footer ul{margin:0;padding:0;list-style-type:none}footer li{display:inline-block;padding-top:5px;padding-bottom:5px}.excerpt{font-size:1.2rem;padding-bottom:1.2rem}article{border:none;padding:0;padding-bottom:2rem}.bottomlinks{font-variant:small-caps;font-weight:bolder;font-size:1rem}.photostream{padding-top:2rem;padding-bottom:2rem}.sl-overlay{background:#000!important}nav{display:inline;text-align:center;margin-top:2rem;width:100%}nav :is(ol,ul) li{display:inline;list-style-type:none;padding:.2rem .5rem;text-decoration:none;margin:0 .5rem;float:right}:root{--notice-color:var(--text);--notice-bg:var(--accent-bg);--notice-info-color:var(--text);--notice-info-bg:#d8ebf1;--notice-success-color:var(--text);--notice-success-bg:#d9edd9;--notice-warning-color:var(--text);--notice-warning-bg:#f7e5cd;--notice-danger-color:var(--text);--notice-danger-bg:#fcdfde}@media (prefers-color-scheme:dark){:root{--notice-color:var(--text);--notice-bg:var(--accent-bg);--notice-info-color:#76a9fa;--notice-info-bg:var(--accent-bg);--notice-success-color:#31c48d;--notice-success-bg:var(--accent-bg);--notice-warning-color:#faca15;--notice-warning-bg:var(--accent-bg);--notice-danger-color:#f98080;--notice-danger-bg:var(--accent-bg)}}.notice{background:var(--accent-bg);border-radius:5px;padding:1rem;margin:2rem 0;font-size:1rem}.notice a{color:unset;text-decoration:underline}.notice.info{color:var(--notice-info-color);background-color:var(--notice-info-bg)}.notice.success{color:var(--notice-success-color);background-color:var(--notice-success-bg)}.notice.warning{color:var(--notice-warning-color);background-color:var(--notice-warning-bg)}.notice.danger{color:var(--notice-danger-color);background-color:var(--notice-danger-bg)}.gist td{all:initial}div.video>iframe{aspect-ratio:16/9;width:100%}code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:0 0;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2b2b2b}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#d4d0ab}.token.punctuation{color:#fefefe}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#ffa07a}.token.boolean,.token.number{color:#00e0e0}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#abe338}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#00e0e0}.token.atrule,.token.attr-value,.token.function{color:gold}.token.keyword{color:#00e0e0}.token.important,.token.regex{color:gold}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}@media screen and (-ms-high-contrast:active){code[class*=language-],pre[class*=language-]{color:windowText;background:window}:not(pre)>code[class*=language-],pre[class*=language-]{background:window}.token.important{background:highlight;color:window;font-weight:400}.token.atrule,.token.attr-value,.token.function,.token.keyword,.token.operator,.token.selector{font-weight:700}.token.attr-value,.token.comment,.token.doctype,.token.function,.token.keyword,.token.operator,.token.property,.token.string{color:highlight}.token.attr-value,.token.url{font-weight:400}}article>figure,article>pre,div.gallery,div.video,pre[class*=language-]{width:100vw;max-width:65rem;margin-left:50%;transform:translateX(-50%);position:relative;box-shadow:0 10px 30px rgba(0,0,0,.15);--border:#ffffff1a}article>figure,div.gallery,div.video{box-shadow:none}
+  </style>
+
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Sen&#39;s Blog">
+  <link rel="alternate" href="/feed.json" type="application/json" title="Sen&#39;s Blog">
+
+  <meta property="og:title" content="Google Home Mini to ESPHome - Hardware Selection">
+  <meta property="og:url" content="https://blog.senil.me/esphome-google-mini-initial-thoughts/">
+  <meta property="og:description" content="Senil&#39;s dumb ramblings.">
+  <meta property="og:image" content="https://blog.senil.me/assets/images/opengraph-article.png">
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Senil">
+  <meta property="og:article:tag" content="technology,home assistant,esphome,projects">
+  <meta name="description" content="Senil&#39;s dumb ramblings.">
+  <meta name="keywords" content="technology,home assistant,esphome,projects">
+
+  <meta name="generator" content="Eleventy v3.0.0">
+
+  <link href="/assets/images/favicon.png" rel="icon" type="image/x-icon">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Google Home Mini to ESPHome - Hardware Selection",
+    "description": "Senil&#39;s dumb ramblings.",
+    "image": "https://blog.senil.me/assets/images/opengraph-article.png",
+    "keywords": "technology,home assistant,esphome,projects",
+    "url": "https://blog.senil.me/esphome-google-mini-initial-thoughts/",
+    "dateModified": "2025-05-25",
+    "author": {
+        "@type": "Person",
+        "name": "Senil",
+        "url": "https://senil.me"
+    }
+  }
+  </script>
+  
+
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <img src="/assets/images/nav-header.png" alt="A plushie of Senil" style="float:left;width:88px;height:51px;">
+      Sen&#39;s Blog
+    </a>
+  </header>
+  <main>
+    <h1><a href="">Google Home Mini to ESPHome - Hardware Selection</a></h1>
+    <p><time datetime="2025-05-25">Posted 25 May 2025</time></p>
+
+<article>
+<p>If you didn’t catch me posting about this earlier this month, I’ve been thinking about turning my 1st gen Google Home Mini (NOT the Nest Mini, that’s the second gen) into a ESPHome-powered voice assistant to link up to my Home Assistant. There’s many, MANY steps involved here, from just designing the damn circuit board to fleshing out the workflow via Home Assistant, but every project has got to start somewhere.</p>
+<p>And hardware selection, since I have zero good reference points as far as I know, is the best place to start.</p>
+<p>Since this is so goddamn long, here are some quick links to jump to different main sections:<br>
+<a href="#the-google-home-mini-itself"><strong>The Google Home Mini Itself.</strong></a><br>
+<a href="#the-brains-of-the-operation"><strong>The Brains of the Operation.</strong></a><br>
+<a href="#the-audio-system"><strong>The Audio System.</strong></a><br>
+<a href="#some-bonus-features-for-the-mini"><strong>Some Bonus Features for the Mini.</strong></a><br>
+<a href="#timeline-and-challenges"><strong>Timeline and Challenges.</strong></a></p>
+<figure><a href="/assets/images/stickers/ConfusedSenil.png"><img src="/assets/images/stickers/ConfusedSenil.png" alt="Senil dazed and drooling, with a loading icon above him. Art by [Dragonjourney](https://www.furaffinity.net/user/dragonjourney)" loading="lazy" style=""></a><figcaption>Senil dazed and drooling, with a loading icon above him. Art by <a href="https://www.furaffinity.net/user/dragonjourney">Dragonjourney</a></figcaption></figure>
+<h2 id="the-goal" tabindex="-1"><a class="header-anchor" href="#the-goal">The Goal</a></h2>
+<p>The ultimate goal of this project is to design, develop, and test a more-or-less drop-in mainboard for a first-generation Google Home Mini that’s based on ESPHome, with minimal-to-no chassis modifications so it truly is plug-and-play.</p>
+<p>ESPHome, a project by Nabu Casa (who also works on Home Assistant), is a platform to easily add DIY devices to Home Assistant. The goal is simple programming via YAML, and every device has a standardized “firmware” of a sorts for end users to add on to. Since this is going to be a brand-new implementation, I get the joy of developing that “firmware” myself.</p>
+<p>OK, it’s not REALLY firmware, it’s just a way to set up board-level naming and such so it’s easier to work with in YAML, but still. I’ll be the one responsible for this shit. Yippee!</p>
+<p>So, let’s talk about the main parts that will be worked on.</p>
+<h2 id="the-google-home-mini-itself" tabindex="-1"><a class="header-anchor" href="#the-google-home-mini-itself">The Google Home Mini Itself</a></h2>
+<p>If you’ve never cracked open a Google Home Mini, you’re missing out on some clever engineering work. The mainboard itself is incredibly compact, with a very, VERY thin PCB and support components on both sides. The metal frame that it sits on (which the speaker points up at to get that 360 degree mono audio) is perfectly crafted for the big capacitors and speaker connection port to sit in, without touching the rest of the board. It’s clever, really, but that means I have to work around the existing metal frame.</p>
+<p>There’s also a tiny little board where the micro-USB plug sits that sends in power, has an itty bitty reset button to wipe the configuration of the device, and a physical switch to turn the microphone on and off. I need to investigate the board further, but it looks like the board only sends through 5V USB power, the reset button, and the mic on/off switch. Since I want users to be able to update the Home Mini without having to tear it apart, I’ll also end up designing a new board that uses USB-C instead and passes through data to the mainboard.</p>
+<p>Regarding that microphone on/off switch, I can’t tell if it ends up physically disconnecting the microphones somehow, or if it’s just a software thing. Since I’ll be designing a new power board, I might as well try to make it a full-on mic disconnect, instead of a software “stop listening, damnit.” If I can’t find a way to physically disconnect the microphones, then I’ll get the joy of figuring out where I can software disconnect things.</p>
+<figure><a href="/assets/images/stickers/DrainedSenil.png"><img src="/assets/images/stickers/DrainedSenil.png" alt="Senil lying face-down on the ground, with a low battery symbol above him. Art by [Dragonjourney](https://www.furaffinity.net/user/dragonjourney)" loading="lazy" style=""></a><figcaption>Senil lying face-down on the ground, with a low battery symbol above him. Art by <a href="https://www.furaffinity.net/user/dragonjourney">Dragonjourney</a></figcaption></figure>
+<p>There’s a handful of LEDs that the Mini lights up when it’s thinking of your request, as well as change as you adjust volume via two… capacitive? pressure? pads on the left and right sides by the microphones. I have no idea how I’m gonna handle those with ESPHome, but there’ll be four nice little lights sitting there regardless.</p>
+<h2 id="the-brains-of-the-operation" tabindex="-1"><a class="header-anchor" href="#the-brains-of-the-operation">The Brains of the Operation</a></h2>
+<p>There are several options at my disposal for making this ESPHome board - I could use an ESP32, I could toss in an RP2040 and a separate WiFi chip, I could do some wacky third thing - but of the existing Home Assistant Voice examples, all of them use some version of the ESP32-S3 chip. There are also plenty of other products that make use of it, so I’ll at least have a reference point for how the thing works.</p>
+<p>However, I do still have a choice to make. I can get the ESP32-S3 chip itself, and add on the necessary support components as I want - being the flash memory, wireless antenna, and all that jazz. Or, I can get a complete module that contains the ESP32-S3, the flash memory, and - if I want - an on-module antenna. There’s a version with a u.FL snap too, but then I’d have to figure out where the hell I’m going to shove a separate antenna into this tiny ass thing.</p>
+<p>Given that I don’t know what the hell I’m doing - I’m a controls engineer by trade, not a PCB designer - I’ll be going with the module that includes (most) of what I need for the brains of it all. There’ll be plenty of other support components for the module, but nowhere near as many for me to manage compared to using the individual chips.</p>
+<figure><a href="/assets/images/stickers/ScaredSenil.png"><img src="/assets/images/stickers/ScaredSenil.png" alt="Senil with his hands on his head, mouth wide open in fear. Art by [Dragonjourney](https://www.furaffinity.net/user/dragonjourney)" loading="lazy" style=""></a><figcaption>Senil with his hands on his head, mouth wide open in fear. Art by <a href="https://www.furaffinity.net/user/dragonjourney">Dragonjourney</a></figcaption></figure>
+<h2 id="the-audio-system" tabindex="-1"><a class="header-anchor" href="#the-audio-system">The Audio System</a></h2>
+<p>What good is a mainboard that hooks up to ESPHome that I want to be a voice assistant that can’t handle audio? Fortunately the Google Home Mini comes with its own 4-ohm 3-watt speaker that, while it doesn’t sound incredible, is at least serviceable and does alright given its dimensions. It’s casing is actually molded to wrap around other components it sits by, so that’s a design constraint on some components. It also isn’t hardwired into the existing mainboard, which makes my life a LOT easier.</p>
+<p>So while my speaker situation is well managed… I still have some microphones to deal with. The Google Home Mini gets away with just two - one on each side, with the case funneling the microphones into a more directed fashion for… reasons, so I have faith I could get away with just two as well. If I added more, I’d need to both figure out where they’re going to go, as well as how they’re going to listen in. Two good mics should be more than enough on that front.</p>
+<p>But wait a second… this is going to be a voice assistant that does wake word stuff on its own (I could pipe an audio stream to Home Assistant, but that means keeping an active network connection 24/7), and there are only so many resources to go around. I can’t just program in beamforming algorithms and other audio processing systems into a chip that’s already burdened with everything else that relates to being a voice assistant.</p>
+<h3 id="enter-the-xmos-xu316" tabindex="-1"><a class="header-anchor" href="#enter-the-xmos-xu316">Enter the XMOS XU316</a></h3>
+<p>The XMOS XU316 is a powerful microcontroller with one job in mind - voice processing. It has a ton of useful, baked-in tools that would be way too annoying for me to program and understand on my own - let alone implement into an ESPHome system that I’m already unfamiliar with - and passes through clean audio that the ESP32 can work with (by shoving it to Home Assistant).</p>
+<p>The XU316, <a href="">per XMOS’s website for it</a>, does acoustic echo cancellation via it’s two-mic input, runs automatic gain control, handles noise supression, and can pass all of this out via I2S. Oh, and it’s also technically a USB Class 2 audio device. Not like that’s something I’ll be using here - the ESP32-S3 can work with I2S for audio, so the XU316 will just pass data along that way.</p>
+<p>Mostly easy-peasy! A chip that handles (most) of what I need, easing the burden from the ESP32 that’ll be handling a built-in wake word and networking. And may or may not be managing additional features that I would love to integrate, but may or may not be able to.</p>
+<h2 id="some-bonus-features-for-the-mini" tabindex="-1"><a class="header-anchor" href="#some-bonus-features-for-the-mini">Some Bonus Features for the Mini</a></h2>
+<figure><a href="/assets/images/stickers/FlexingSenil.png"><img src="/assets/images/stickers/FlexingSenil.png" alt="Senil flexing his biceps, smirking. Art by [Dragonjourney](https://www.furaffinity.net/user/dragonjourney)" loading="lazy" style=""></a><figcaption>Senil flexing his biceps, smirking. Art by <a href="https://www.furaffinity.net/user/dragonjourney">Dragonjourney</a></figcaption></figure>
+<p>There are a variety of nice, quality-of-life features that’ll take this board from a basic drop-in, and turn it into a proper upgrade built for Home Assistant from the get go. All of these are things that I would LOVE to add, but simply might not be able to. Both because of how little space I have to work with, and because I probably don’t know what I’m doing.</p>
+<h3 id="smart-home-wireless-protocols" tabindex="-1"><a class="header-anchor" href="#smart-home-wireless-protocols">Smart Home Wireless Protocols</a></h3>
+<p>Something that the Google Home Mini lacks is any ability to connect to act as a hub for smart home tech. It’s merely a voice assistant, it can’t connect to jack shit without you owning a separate hub to handle smart home protocols like Zigbee, Z-Wave, or Thread.</p>
+<p>And so, a nice quality of life upgrade would be to build in a router for Zigbee and/or Thread to the mainboard. This at least gives the board a value-add, outside of “I want to keep this thing but de-Google it,” something that I think is important for any kind of project like this. If your setup works as-is with Google Home and/or Home Assistant, why would you bother modifying your Home Mini to do this?</p>
+<h4 id="zigbee-and-thread" tabindex="-1"><a class="header-anchor" href="#zigbee-and-thread">Zigbee and Thread</a></h4>
+<p>Zigbee is the obvious choice to add as a router. It has a wide ecosystem to work with, and can easily talk to Home Assistant via the MQTT integration. It’s also very well understood, and I’d have plenty of reference implementations to work with, cutting down on the labor involved in integrating the damn thing.</p>
+<p>Thread is up and coming, built to be low power and tightly integrated with the Matter ecosystem. I’ve personally taken interest in Matter largely because of how comprehensive it is, but I take serious issue with how Google, Apple, and Amazon - all members of the organization that develops the Matter specifications - neglect to implement the Matter spec in full. Only Samsung’s SmartThings and Home Assistant fully implement the latest Matter specs, and giving this Google Home Mini an upgrade to not only act as a hub for smart devices, but to have built-in support for a growing protocol with Home Assistant would be a good value add in my opinion.</p>
+<p>I can, of course, set it up to do either Zigbee or Thread, since both use 2.4GHz for networking, which would hopefully cut down on the design work and hardware integration.</p>
+<h4 id="z-wave" tabindex="-1"><a class="header-anchor" href="#z-wave">Z-Wave</a></h4>
+<p>Z-Wave is the final option available to me, and it’s one that I’m a little more hesitant to include. Z-Wave has nowhere near the ecosystem support that Zigbee has, nor does it have the growth that Thread/Matter enjoys, but it does have a major advantage over both. It doesn’t use the increasingly cluttered 2.4GHz channels, instead opting for lower bandwidth and less cluttered sub-1GHz bands. Sure, Z-Wave isn’t as “fast” as Zigbee or Thread can be, but it can boast a much better coverage radius than either, ideally meaning it needs fewer permantently powered devices to maintain a good mesh network with wide coverage. Hell, the newest Z-Wave specification has an effective radius of over a kilometer.</p>
+<p>I don’t think any Z-Wave implementation in a Google Home Mini is going to have quite that range, but it would boast a large range and (ideally) less clutter than Zigbee or Thread.</p>
+<p>Z-Wave does have a downside in that exactly one company owns the designs for Z-Wave hardware and radios and shit, severely limiting my hardware selection when it comes to the “how the fuck do I shove parts inside this thing” step of this project.</p>
+<h3 id="built-in-sensors" tabindex="-1"><a class="header-anchor" href="#built-in-sensors">Built-in Sensors</a></h3>
+<p>This is much lower on my desire list than somehow baking in a smart home protocol, but having some sensors that are automagically included would be a nice benefit. I don’t know what I could realistically add - temperature and humidity would be easily influenced by the heat of the other components, presence detection would be difficult without modifying the chassis, same as ambient light - but if there’s the space to add something, and make it something useful for where you might put this kind of thing, then I’d love to add it.</p>
+<p>This could easily be adding many more support components though, and figuring out how to cram even more into the already probably crammed mainboard would be… Difficult, to say the least.</p>
+<h2 id="timeline-and-challenges" tabindex="-1"><a class="header-anchor" href="#timeline-and-challenges">Timeline &amp; Challenges</a></h2>
+<figure><a href="/assets/images/stickers/HowdySenil.png"><img src="/assets/images/stickers/HowdySenil.png" alt="Senil pointing towards the viewier, winking. Art by [Dragonjourney](https://www.furaffinity.net/user/dragonjourney)" loading="lazy" style=""></a><figcaption>Senil pointing towards the viewier, winking. Art by <a href="https://www.furaffinity.net/user/dragonjourney">Dragonjourney</a></figcaption></figure>
+<p>There isn’t really any “goal” for when I want this thing done. All I know is that step one is to lock down exactly what parts I need, and then get to work designing circuit boards in some sort of PCB CAD software. And… then hope that I can get these boards built and assembled for relatively cheap despite the ridiculus tariffs in place.</p>
+<p>I would love to both open source the designs and programming for this project, and maybe sell the boards myself (acting as an intermediary between some PCB manufacturer and assembler, programming and testing them, and shipping them off) so folks can get in on de-Googling (and de-Amazoning) their smart homes and voice assistants.</p>
+<p>Having a mostly drop-in board that Just Works out of the box (barring Home Assistant Voice quirks, I can’t control those) and hopefully has a high partner approval factor so it’s easy to get used to would be fantastic. And maybe, just maybe, my design will lead to folks spinning it off and making similar drop-ins for other voice assistant products from Google, Apple, and Amazon.</p>
+<p>The best time to build our own assistants was years ago. The second best time is right here, right now.</p>
+<h4 id="thank-you" tabindex="-1"><a class="header-anchor" href="#thank-you">Thank you</a></h4>
+<p>If you’re reading this, you made it to the end of the (very long) post. Thanks for reading this gigantic rambly nonsense. If you have circuit design experience, know of a good PCB factory and assembler, or have projects you know of that would be a great source of inspiration, PLEASE feel free to reach out to me. I’m available in a lot of places, so poke me on Bluesky, Fedi, Telegram, Discord… <a href="mailto://hello@senil.me">even email, if you want!</a></p>
+<figure><a href="/assets/images/stickers/HeartSenil.png"><img src="/assets/images/stickers/HeartSenil.png" alt="Senil hugging a big pink heart. Art by [Dragonjourney](https://www.furaffinity.net/user/dragonjourney)" loading="lazy" style=""></a><figcaption>Senil hugging a big pink heart. Art by <a href="https://www.furaffinity.net/user/dragonjourney">Dragonjourney</a></figcaption></figure>
+</article>
+
+  </main>
+
+  <footer>
+
+    <ul class="bottomlinks"><li><a href="https://bsky.app/profile/bsky.senil.me">Bluesky</a></li>&nbsp;&nbsp;&nbsp;<li><a href="https://booping.synth.download/@senil">Fediverse</a></li>&nbsp;&nbsp;&nbsp;<li><a href="https://senil.me">Website</a></li>&nbsp;&nbsp;&nbsp;<li><a href="/feed.xml">RSS Feed</a></li>&nbsp;&nbsp;&nbsp;</ul>
+
+    <p>&mdash; &copy; 2025 Senil &mdash;</p>
+    <p><a href="https://www.11ty.dev/">Powered by 11ty</a> &mdash; <a href="https://github.com/mendhak/eleventy-satisfactory">Made with 11ty Satisfactory</a></p>
+
+    <ul class="photostream"></ul>
+  </footer>
+
+<a rel="me" href="https://furry.engineer/@senil888"></a>
+
+
+<link rel="stylesheet" href="/simplelightbox/simple-lightbox.min.css">
+<script src="/simplelightbox/simple-lightbox.min.js"></script>
+<script>
+  (function () {
+    var $gallery = new SimpleLightbox('figure a', {
+      'overlayOpacity': 0.6,
+      'uniqueImages': false
+    });
+  })();
+</script>
+
+
+  <!-- Current page: /esphome-google-mini-initial-thoughts/ -->
+</body>
+
+</html>
