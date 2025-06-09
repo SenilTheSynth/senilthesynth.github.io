@@ -52,6 +52,11 @@
   </url>
   
   <url>
+    <loc>https://blog.senil.me/public-health-at-large-cons/</loc>
+    <lastmod>2025-05-18</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.senil.me/assets/images/image-captions/</loc>
     <lastmod>2025-05-19</lastmod>
   </url>
@@ -69,5 +74,10 @@
   <url>
     <loc>https://blog.senil.me/esphome-google-mini-initial-thoughts/</loc>
     <lastmod>2025-05-25</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/megacon-musings/</loc>
+    <lastmod>2025-06-09</lastmod>
   </url>
 </urlset>
