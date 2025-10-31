@@ -83,6 +83,15 @@
   
   <url>
     <loc>https://blog.senil.me/state-of-amtrak/</loc>
+<<<<<<< HEAD
     <lastmod>2025-10-31</lastmod>
+=======
+    <lastmod>2025-07-06</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.senil.me/draft-post/</loc>
+    <lastmod>2025-07-24</lastmod>
+>>>>>>> a3cf8fe8f7be92fa2aacbbff5f1a6ab00aa3609e
   </url>
 </urlset>
