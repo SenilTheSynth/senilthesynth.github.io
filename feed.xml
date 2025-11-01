@@ -682,16 +682,4 @@
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;If the power goes out… so does everything else.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 </content>
 	</entry>
-	
-	<entry>
-		<title>This draft post should only appear locally</title>
-		<link href="https://blog.senil.me/a-draft-post/"/>
-		<updated>2023-01-07T00:00:00Z</updated>
-		<id>https://blog.senil.me/a-draft-post/</id>
-		<content type="html">&lt;p&gt;This post has been created in the &lt;code&gt;drafts&lt;/code&gt; folder.  It should only appear when the eleventy server runs with &lt;code&gt;--watch&lt;/code&gt; or &lt;code&gt;--serve&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In package.json, the start command has been given those flags, so drafts should appear when running via &lt;code&gt;npm run start&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In the docker-compose file from where this site runs, the command is &lt;code&gt;npm start&lt;/code&gt;, so running via &lt;code&gt;docker-compose up&lt;/code&gt; should show draft posts.&lt;/p&gt;
-&lt;p&gt;Since &lt;code&gt;npm run build&lt;/code&gt; doesn’t have the flags, drafts will not appear in the production build.&lt;/p&gt;
-</content>
-	</entry>
 </feed>
